@@ -1,0 +1,51 @@
+{
+  "items": [
+    {
+      "type": "graph",
+      "ctime": 1711755621613,
+      "title": "Cases",
+      "options": {
+        "collapse-filter": false,
+        "search": "path:Cases - [\"type\":moc]",
+        "showTags": true,
+        "showAttachments": false,
+        "hideUnresolved": true,
+        "showOrphans": false,
+        "collapse-color-groups": false,
+        "colorGroups": [
+          {
+            "query": "tag:#malicious  ",
+            "color": {
+              "a": 1,
+              "rgb": 14622927
+            }
+          },
+          {
+            "query": "tag:#report  ",
+            "color": {
+              "a": 1,
+              "rgb": 5281005
+            }
+          }
+        ],
+        "collapse-display": false,
+        "showArrow": true,
+        "textFadeMultiplier": -2.5,
+        "nodeSizeMultiplier": 2.97109375,
+        "lineSizeMultiplier": 3.17526041666667,
+        "collapse-forces": true,
+        "centerStrength": 0.518713248970312,
+        "repelStrength": 10,
+        "linkStrength": 1,
+        "linkDistance": 250,
+        "scale": 1.0000000000000058,
+        "close": true
+      }
+    },
+    {
+      "type": "file",
+      "ctime": 1711755648825,
+      "path": "🏠 Dashboard.md"
+    }
+  ]
+}

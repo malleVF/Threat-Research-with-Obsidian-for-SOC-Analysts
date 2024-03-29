@@ -1,0 +1,217 @@
+{
+  "main": {
+    "id": "296df53705ddcbe9",
+    "type": "split",
+    "children": [
+      {
+        "id": "563a33c1aa48f668",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5d7a747e71953887",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "🏠 Dashboard.md",
+                "mode": "source",
+                "source": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "ec3144527c7625a0",
+    "type": "split",
+    "children": [
+      {
+        "id": "9fea67d02be0318f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f40e813c93d3da4a",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "a4cc6c3ebbfeff2f",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "file:Trash",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabeticalReverse"
+              }
+            }
+          },
+          {
+            "id": "9b79bc82540af12c",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          },
+          {
+            "id": "18e30d20874003ce",
+            "type": "leaf",
+            "state": {
+              "type": "surfing-tab-tree",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "3c7c14a7c841a9c8",
+    "type": "split",
+    "children": [
+      {
+        "id": "5a600926ed89e184",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "81263f63c8a14920",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "🏠 Dashboard.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "97101e47e59fe609",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "🏠 Dashboard.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "1528e8091b761afe",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "0dc33bbdc21ac616",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "🏠 Dashboard.md"
+              }
+            }
+          },
+          {
+            "id": "f4822a7ce4634fef",
+            "type": "leaf",
+            "state": {
+              "type": "oz-calendar",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "horizontal",
+    "width": 407.5
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "obsidian-map-view:Open map view": false,
+      "homepage:Open homepage": false,
+      "templater-obsidian:Templater": false
+    }
+  },
+  "active": "5d7a747e71953887",
+  "lastOpenFiles": [
+    "MOC_ Changes on my notes.md",
+    "🏠 Dashboard.md",
+    "Cases/Case-1011/Case-1011 Report.md",
+    "Cases/Case-1012/Case-1012 Report.md",
+    "Cases/Case-1012/cve CVE-2024-30201.md",
+    "Cases/Case-1012/domain shop.amazon-aws.fr.md",
+    "Cases/Case-1012/ipv4 143.198.30.16.md",
+    "Cases/Case-2024/Case-2024 Report.md",
+    "Cases/Case-2025/Case-2025 Report.md",
+    "Cases/Case-2025/ipv4 klöklökjlö.md",
+    "Cases/Case-2025/ipv4 kjloj.md",
+    "Cases/Case-2025/hash kökkopkopkop25.md",
+    "Cases/Case-2025/hash 25hash.md",
+    "Cases/Case-2025/domain kopküoüpoikojk.md",
+    "Cases/Case-2025/cve klöjlöjlkj jlöjkl .md",
+    "Cases/Case-2025/cve 25 ee rere re.md",
+    "Cases/Case-2025/cve 2025kflefkelöfke.md",
+    "Cases/Case-2025/MOC_ Changes on Case-2025 files.md",
+    "Cases/Case-2024/MOC_ Changes on Case-2024 files.md",
+    "0 Templates/Changes on case files Template.md",
+    "Cases/Case-2024/domain jlkjlkjlkjl.md",
+    "Cases/Case-2024/hash 24 k4pkrpü4k rü.md",
+    "Cases/Case-2024/cve jfjrklgfrjklgjrkgjr.md",
+    "Untitled.md",
+    "0 Templates/Actions/Create New Case & Artifacts.md",
+    "0 Templates/Helper/Buttons Configuration.md",
+    "Cases/Case-2025",
+    "0 Templates/Scripts/deleteThis.js",
+    "0 Templates/Scripts",
+    "0 Templates/Neuer Ordner",
+    "Cases/Case-2024",
+    "Cases/Case-23",
+    "Cases/Case-22",
+    "Untitled 5.js",
+    "Untitled 4.js",
+    "Untitled 3.js",
+    "CTI - Workflow Create Case & Artifact.png",
+    "Excalidraw/Scripts/Downloaded/Split Ellipse.svg",
+    "CTI Research and Reporting.png",
+    "2023_Obsidian_logo.svg",
+    "Excalidraw/Scripts/Downloaded/Toggle Grid.svg",
+    "Excalidraw/Scripts/Downloaded/Split text by lines.svg",
+    "Excalidraw/Scripts/Downloaded/Slideshow.svg",
+    "Excalidraw/Scripts/Downloaded/Set background color of unclosed line object by adding a shadow clone.svg",
+    "Excalidraw/Scripts/Downloaded/Scribble Helper.svg",
+    "Excalidraw/Scripts/Downloaded/Change shape of selected elements.svg"
+  ]
+}

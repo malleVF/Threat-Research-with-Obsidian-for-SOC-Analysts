@@ -1,0 +1,72 @@
+/**
+ Create pagebreaks in exported Obsidian PDFs.
+
+ Example:
+
+ # Heading 1
+ 
+ Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+ Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+ when an unknown printer took a galley of type and scrambled it to make a type 
+
+ ## Heading 2 (pagebreak before this)
+
+ Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+ Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+ when an unknown printer took a galley of type and scrambled it to make a type
+
+ ---
+ --- ( <-- linebreak )
+
+ Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+ Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+ when an unknown printer took a galley of type and scrambled it to make a type 
+
+*/
+@media print {
+  /* pagebreak before all ## headings */
+  
+  h1:not(:first-of-type) {
+    page-break-before: always;
+  }
+ 
+/* prevent h2 from creating a page break if no text other than its parent heading comes before it. */ 
+ :not(h1) + h2 {
+    page-break-before: always;
+}
+ /*
+ h2 {
+    page-break-before: always;
+  }
+ */ 
+ /* h2:not(h1) {
+    page-break-before: avoid;
+  }
+*/
+
+  h3,
+  h4 {
+    page-break-after: avoid;
+  }
+
+/*  pre,
+  blockquote {
+    page-break-inside: avoid;
+  }
+ */ 
+
+  /* use double <hr> ('---') to indicate a page break */
+  hr + hr {
+    page-break-before: always;
+    visibility: hidden;
+  }
+
+  :not(hr) + hr {
+    visibility: hidden;
+  }
+
+  :not(hr) + hr + :not(hr):not(h2) {
+    border-top: 1px solid black;
+    padding-top: 2em;
+  }
+}

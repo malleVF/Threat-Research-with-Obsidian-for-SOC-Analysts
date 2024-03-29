@@ -1,0 +1,10 @@
+{
+  "deletionDestination": "obsidian",
+  "excludeInclude": 1,
+  "excludedFolders": [],
+  "attachmentExtensions": [],
+  "deletionConfirmation": false,
+  "runOnStartup": true,
+  "removeFolders": false,
+  "ignoredFrontmatter": []
+}

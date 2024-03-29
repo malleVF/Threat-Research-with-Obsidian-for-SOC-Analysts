@@ -1,0 +1,217 @@
+{
+  "main": {
+    "id": "296df53705ddcbe9",
+    "type": "split",
+    "children": [
+      {
+        "id": "953093c0b2ce4de5",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d6129d4a773cefeb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "🏠 Dashboard.md",
+                "mode": "preview",
+                "source": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "ec3144527c7625a0",
+    "type": "split",
+    "children": [
+      {
+        "id": "9fea67d02be0318f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f40e813c93d3da4a",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "a4cc6c3ebbfeff2f",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "file:Trash",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabeticalReverse"
+              }
+            }
+          },
+          {
+            "id": "9b79bc82540af12c",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          },
+          {
+            "id": "18e30d20874003ce",
+            "type": "leaf",
+            "state": {
+              "type": "surfing-tab-tree",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "horizontal",
+    "width": 348.5
+  },
+  "right": {
+    "id": "3c7c14a7c841a9c8",
+    "type": "split",
+    "children": [
+      {
+        "id": "5a600926ed89e184",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "81263f63c8a14920",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "🏠 Dashboard.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "97101e47e59fe609",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "🏠 Dashboard.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "1528e8091b761afe",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "0dc33bbdc21ac616",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "🏠 Dashboard.md"
+              }
+            }
+          },
+          {
+            "id": "f4822a7ce4634fef",
+            "type": "leaf",
+            "state": {
+              "type": "oz-calendar",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "horizontal",
+    "width": 407.5
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "obsidian-map-view:Open map view": false,
+      "homepage:Open homepage": false,
+      "templater-obsidian:Templater": false,
+      "file-cleaner-redux:Clean files": false
+    }
+  },
+  "active": "d6129d4a773cefeb",
+  "lastOpenFiles": [
+    "🏠 Dashboard.md",
+    "Cases/Case-2025/ipv4 143.198.30.16.md",
+    "Cases/Case-2025/Case-2025 Report.md",
+    "0 Templates/Actions/Create New Case & Artifacts.md",
+    "0 Templates/Actions/Action IP - Maltiverse token_required.md",
+    "0 Templates/Actions/Action IP - Maltiverse.md",
+    "0 Templates/Actions/Action Domain - Maltiverse token_reqiured.md",
+    "0 Templates/Actions/Action Domain - Maltiverse.md",
+    "0 Templates/Actions/Action CVE - Mitre.md",
+    "📚 README.md",
+    "README.md",
+    "LinkedIn Article.md",
+    "Cases/Case-2026/Case-2026 Report.md",
+    "Cases/Case-2026/MOC_ Changes on Case-2026 files.md",
+    "Cases/Case-2026",
+    "Cases/Case-2026/.md",
+    "Untitled.md",
+    "Cases/Case-2025/MOC_ Changes on Case-2025 files.md",
+    "0 Templates/Helper/Report Template.md",
+    "0 Templates/Helper/Buttons Configuration.md",
+    "Attachments/2023_Obsidian_logo.svg",
+    "Attachments/CTI - Workflow Create Case & Artifact.png",
+    "Attachments",
+    "Attachments/CTI - Workflow Execute Action Template.png",
+    "d shop.amazon-aws.fr.md",
+    "0 Templates/Actions/Action Domain - Alienvault.md",
+    "0 Templates/Actions/Action Domain - DomainTools.md",
+    "Cases/Case-1011/ipv4 143.198.30.16.md",
+    "Cases/Case-1011/domain shop.amazon-aws.fr.md",
+    "0 Templates/SOPs/ipv4.md",
+    "Cases/Case-1012/ipv4 143.198.30.16.md",
+    "Attachments/CTI - Workflow.png",
+    "Cases/Case-2025",
+    "0 Templates/Scripts/deleteThis.js",
+    "0 Templates/Scripts",
+    "0 Templates/Neuer Ordner",
+    "Cases/Case-2024",
+    "Cases/Case-23",
+    "Cases/Case-22",
+    "Untitled 5.js",
+    "Excalidraw/Scripts/Downloaded/Split Ellipse.svg",
+    "Attachments/CTI Research and Reporting.png",
+    "Excalidraw/Scripts/Downloaded/Toggle Grid.svg",
+    "Excalidraw/Scripts/Downloaded/Split text by lines.svg"
+  ]
+}

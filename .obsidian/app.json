@@ -1,0 +1,15 @@
+{
+  "promptDelete": false,
+  "livePreview": false,
+  "showLineNumber": true,
+  "alwaysUpdateLinks": true,
+  "pdfExportSettings": {
+    "includeName": false,
+    "pageSize": "A4",
+    "landscape": true,
+    "margin": "0",
+    "downscalePercent": 100
+  },
+  "trashOption": "local",
+  "defaultViewMode": "preview"
+}

@@ -1,0 +1,9 @@
+{
+  "accentColor": "#202eee",
+  "enabledCssSnippets": [
+    "wide views",
+    "multi columns",
+    "obsidian-pagebreaks"
+  ],
+  "theme": "system"
+}

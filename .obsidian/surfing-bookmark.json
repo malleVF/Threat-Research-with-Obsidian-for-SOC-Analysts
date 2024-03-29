@@ -1,0 +1,48 @@
+{
+  "bookmarks": [
+    {
+      "id": "-484653260",
+      "name": "OTE-Templates/templates at main · 3nock/OTE-Templates · GitHub",
+      "url": "https://github.com/3nock/OTE-Templates/tree/main/templates",
+      "description": "",
+      "category": [
+        "ROOT"
+      ],
+      "tags": "",
+      "created": 1711312980000,
+      "modified": 1711313040000
+    },
+    {
+      "id": "1697628278",
+      "name": "Templater",
+      "url": "https://silentvoid13.github.io/Templater/introduction.html",
+      "description": "",
+      "category": [
+        "ROOT"
+      ],
+      "tags": "",
+      "created": 1711312200000,
+      "modified": 1711312740000
+    },
+    {
+      "id": "-221375102",
+      "name": "Help Obsidian",
+      "url": "https://help.obsidian.md/Home",
+      "description": "",
+      "category": [
+        "ROOT"
+      ],
+      "tags": "",
+      "created": 1711311960000,
+      "modified": 1711313040000
+    }
+  ],
+  "categories": [
+    {
+      "value": "ROOT",
+      "text": "ROOT",
+      "label": "ROOT",
+      "children": []
+    }
+  ]
+}
