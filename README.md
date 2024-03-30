@@ -34,7 +34,6 @@ I was inspired by the work of Gert-Jan Bruggink, Micah Hoffman and Enock Nichola
 
 
 ---
-![](https://github.com/malleVF/Threat-Research-with-Obsidian-for-SOC-Analysts/blob/main/Attachments/CTI%20Research%20and%20Reporting.png)
 
 ## Workflow: Creating a case and adding artifacts (IP address, domain etc)
 
