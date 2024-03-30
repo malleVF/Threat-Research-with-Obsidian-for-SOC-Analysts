@@ -1,5 +1,5 @@
 ---
-The repo is a complete Obsidian vault. It is ruqired to install [Obsidian](https://obsidian.md)
+The repo is a complete Obsidian vault. It is required to install [Obsidian](https://obsidian.md)
 Starting from the dashboard you can create a new Case with the Button "Create Case / Artifact".
 For further reading, I recommend the README file within the vault.
 
