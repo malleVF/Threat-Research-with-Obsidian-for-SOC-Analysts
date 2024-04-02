@@ -4,15 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "be3067cdbd3fe51e",
+        "id": "27cae56ef63756f0",
         "type": "tabs",
         "children": [
           {
-            "id": "03f34113baee437a",
+            "id": "6cedc75db054e613",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Cases/Case-0815/ipv4 202.182.107.193.md",
+                "mode": "preview",
+                "source": true
+              }
             }
           }
         ]
@@ -73,7 +77,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 233.5
+    "width": 233.5,
+    "collapsed": true
   },
   "right": {
     "id": "3c7c14a7c841a9c8",
@@ -89,6 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Cases/Case-0815/ipv4 202.182.107.193.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,6 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Cases/Case-0815/ipv4 202.182.107.193.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +133,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Cases/Case-0815/ipv4 202.182.107.193.md"
+              }
             }
           },
           {
@@ -142,8 +151,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 354.5,
-    "collapsed": true
+    "width": 354.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -159,13 +167,18 @@
       "file-cleaner-redux:Clean files": false
     }
   },
-  "active": "f40e813c93d3da4a",
+  "active": "6cedc75db054e613",
   "lastOpenFiles": [
+    "0 Templates/Attachments/Action_Result.png",
+    "0 Templates/Attachments/Dashboard.png",
+    "Cases/Case-0815/Case-0815 Report.md",
+    "Cases/Case-0815/cve CVE-2024-30201.md",
     "🏠 Dashboard.md",
+    "Cases/Case-2025/Case-2025 Report.md",
+    "README.md",
     "Cases/Case-0815/hash 450437d49a7e5530c6fb04df2e56c3ab1553ada3712fab02bd1eeb1f1adbc267.md",
     "0 Templates/Attachments/Artifact_Creation.mp4",
     "Cases/Case-2025/ipv4 143.198.30.16.md",
-    "Cases/Case-2025/Case-2025 Report.md",
     "0 Templates/Actions/Create New Case & Artifacts.md",
     "0 Templates/Actions/Action IP - Maltiverse token_required.md",
     "0 Templates/Actions/Action IP - Maltiverse.md",
@@ -173,7 +186,6 @@
     "0 Templates/Actions/Action Domain - Maltiverse.md",
     "0 Templates/Actions/Action CVE - Mitre.md",
     "📚 README.md",
-    "README.md",
     "LinkedIn Article.md",
     "Cases/Case-2026/Case-2026 Report.md",
     "Cases/Case-2026/MOC_ Changes on Case-2026 files.md",
@@ -190,9 +202,6 @@
     "d shop.amazon-aws.fr.md",
     "0 Templates/Actions/Action Domain - Alienvault.md",
     "0 Templates/Actions/Action Domain - DomainTools.md",
-    "Cases/Case-1011/ipv4 143.198.30.16.md",
-    "Cases/Case-1011/domain shop.amazon-aws.fr.md",
-    "0 Templates/SOPs/ipv4.md",
     "Attachments/CTI - Workflow.png",
     "Cases/Case-2025",
     "0 Templates/Scripts/deleteThis.js",
