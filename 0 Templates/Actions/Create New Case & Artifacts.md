@@ -1,20 +1,21 @@
 <%* 
+//Main folder for all use cases
+let usecasePath ="Cases/"; 
 
-let usecasePath ="Cases/"; //Main folder for all use cases
-
-let caseID = await tp.system.prompt("Case-ID","Case-"); // Prompt Use Cases ID
+// Prompt Use Cases ID
+let caseID = await tp.system.prompt("Case-ID","Case-"); 
 
 // List Artifact and SOP Templates
 let artifactMapper = {
-  "IPv4 Address":"ipv4",
-  "Common Vulnerabilities and Exposures":"cve",
-  "File hash":"hash",
-  "Domain Name":"domain"
+  "IPv4 Address":"SOP ipv4",
+  "Common Vulnerabilities and Exposures":"SOP cve",
+  "File hash":"SOP hash",
+  "Domain Name":"SOP domain"
 };
 
 let newTicket = '';
 
-// Check for existing Use Case ID folder 
+// Check for existing Use Case ID folder and create new if it dosn't exist
 if (!await tp.file.exists(usecasePath+"/"+caseID)) { 
 	 newTicket = await tp.system.suggester(["Yes", "No"], [true, false], false, "Case-ID doesn't exist. Create new case?");
 	 more = false;
@@ -22,9 +23,10 @@ if (!await tp.file.exists(usecasePath+"/"+caseID)) {
 	more = true;
 }
 
-// Create new Use Case folder
+// Create new Case folder
 if (newTicket == true) {
-	await tp.file.move("/"+usecasePath+caseID+"/");
+	// Create Case-ID folder
+	await app.vault.createFolder("/"+usecasePath+caseID+"/");
 
 	// Create Report file
     await tp.file.create_new( tp.file.find_tfile("Report Template"),caseID+" Report", false, app.vault.getAbstractFileByPath(usecasePath+caseID));
@@ -35,19 +37,19 @@ if (newTicket == true) {
 	more = true;
 }
 
-let artifactList = ''; //only for logging
+// Prompt with list of artifacts, add artifact and create file in specified Case folder
 while (more == true) {
+    // Prompt List of Artifact Types
     let artifact = await tp.system.suggester(Object.keys(artifactMapper), Object.keys(artifactMapper), "", "Artifact");
+    // Prompt Input Artifact
     let artifactName = await tp.system.prompt(artifact,"");
-    artifactList = artifactList + artifactMapper[artifact]+": [["+artifactName+"]]\n"; //only for logging
 
-	// File creation with SOP in specified folder 
-	await tp.file.create_new( tp.file.find_tfile(artifactMapper[artifact],artifactMapper[artifact]+" "+artifactName),artifactMapper[artifact]+" "+artifactName, false, app.vault.getAbstractFileByPath(usecasePath+caseID));
+	const sop_sp = artifactMapper[artifact].split(' '); 
+	const sop = sop_sp[1];
+
+	// File creation with SOP Template in specified Case folder 
+	await tp.file.create_new( tp.file.find_tfile(artifactMapper[artifact],artifactMapper[artifact]+" "+artifactName),sop+" "+artifactName, false, app.vault.getAbstractFileByPath(usecasePath+caseID));
 	
     more = await tp.system.suggester(["Yes", "No"], [true, false], false, "Add more artifacts?");
-
-//tp.user.deleteThis();
 }
-
-//tp.user.deleteThis();
 -%>

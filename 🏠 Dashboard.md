@@ -10,18 +10,18 @@ cssclasses:
 >
 >> [!Note] Cases & Actions
 >> #### `button-action`
->> #### [[MOC_ Changes on my notes|♻️ Changes on files]]
+>> #### Mode:  `button-light-mode`   `button-dark-mode`
 >
 >> [!Abstract] Goto
->> #### [[MOC_ Changes on my notes|♻️ Changes on files]]
+>> #### [[#♻️ Changes on My Notes]]
 >
 >> [!help]
 >> #### [[📚 Readme#^hotkeys\|🔑 Hotkeys]] 
->> #### [[📚 Readme\|❓Help]]
+>> #### [[📚 Readme\|❓Help]]  |   [[Artifact_Creation.mp4|📺]]
 
-# 🛠 My Worklog
+<br>
 
-## 🗂️  Cases
+# 🗂️  Cyber Security Investigation Reports
 
 ```dataview
 
@@ -32,7 +32,7 @@ report AS "Report",
 file.ctime AS "Created @"
 
 FROM "Cases"
-WHERE type = "report" AND (case_closed != true)
+WHERE artifact_type = "report" AND (case_closed != true)
 SORT file.link
 
 ```
@@ -50,11 +50,15 @@ SORT file.link
 >SORT file.mtime DESC
 > ```
 
-## 
+<br>
 
- > [!multi-column]
+# 🛠 My Worklog
+
+<br>
+
+> [!multi-column]
 >
->>[!todo] ## 📝 Tasks
+>>[!todo] # 📝 Tasks
 >>```dataview
 >>TASK
 >>
@@ -75,7 +79,7 @@ SORT file.link
 >>classification
 >>
 >>FROM "Cases"
->>WHERE case_id AND type != "report"
+>>WHERE case_id AND artifact_type != "report"
 >>SORT artifact ASC
 >>
 >>```
@@ -90,11 +94,32 @@ SORT file.link
 
 # ♻️ Changes on My Notes
 
--  ##  #mcl/list-card
-> [! warning] Created Notes (last 20)
-> ![[MOC_ Files Created#^list]]
-
--  ##  
-> [! danger ] Modified Notes (last 20)
-> ![[MOC_ Files Modified#^list]]
+> [!multi-column] 
+> 
+>> [! note] Created notes
+>> A list of all my Files created over time. Top 20 sorted by file creation time DESC. 
+>> ```dataview
+>> TABLE WITHOUT ID
+>> file.link,
+>> file.folder,
+>> type,
+>> file.ctime
+>> FROM -"0 Templates"
+>> SORT file.ctime DESC
+>> LIMIT 20
+>> ```
+>  
+>> [! warning ] Modified notes
+>> A list of all my Files changed over time. Top 20 sorted by file modified time DESC. 
+>> ```dataview
+>> 
+>> TABLE WITHOUT ID
+>> file.link,
+>> file.folder,
+>> type,
+>> file.mtime
+>> 
+>> SORT file.mtime DESC
+>> LIMIT 20
+>> ```
 

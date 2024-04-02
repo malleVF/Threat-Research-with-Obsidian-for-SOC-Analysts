@@ -1,11 +1,1 @@
-{
-	"id": "oz-calendar",
-	"name": "OZ Calendar",
-	"version": "0.3.3",
-	"minAppVersion": "0.15.0",
-	"description": "View your notes in Calendar using any YAML key with date",
-	"author": "Ozan Tellioglu",
-	"authorUrl": "https://www.ozan.pl",
-	"fundingUrl": "https://ko-fi.com/ozante",
-	"isDesktopOnly": false
-}
+{"id":"oz-calendar","name":"OZ Calendar","version":"0.3.4","minAppVersion":"0.15.0","description":"View your notes in Calendar using any YAML key with date","author":"Ozan Tellioglu","authorUrl":"https://www.ozan.pl","fundingUrl":"https://ko-fi.com/ozante","isDesktopOnly":false}

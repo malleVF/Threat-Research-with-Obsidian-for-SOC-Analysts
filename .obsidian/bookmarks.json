@@ -2,50 +2,73 @@
   "items": [
     {
       "type": "graph",
-      "ctime": 1711755621613,
-      "title": "Cases",
+      "ctime": 1712066346535,
+      "title": "Case Graph",
       "options": {
         "collapse-filter": false,
-        "search": "path:Cases - [\"type\":moc]",
-        "showTags": true,
+        "search": "path:Cases/ -[\"type\":moc]",
+        "showTags": false,
         "showAttachments": false,
         "hideUnresolved": true,
-        "showOrphans": false,
+        "showOrphans": true,
         "collapse-color-groups": false,
         "colorGroups": [
           {
             "query": "tag:#malicious  ",
             "color": {
               "a": 1,
-              "rgb": 14622927
+              "rgb": 15992326
             }
           },
           {
-            "query": "tag:#report  ",
+            "query": "tag:#suspicious  ",
             "color": {
               "a": 1,
-              "rgb": 5281005
+              "rgb": 16757002
+            }
+          },
+          {
+            "query": "tag:#neutral  ",
+            "color": {
+              "a": 1,
+              "rgb": 2617369
+            }
+          },
+          {
+            "query": "tag:#whitelist  ",
+            "color": {
+              "a": 1,
+              "rgb": 16311574
+            }
+          },
+          {
+            "query": "tag:#ioc_list  ",
+            "color": {
+              "a": 1,
+              "rgb": 9705448
+            }
+          },
+          {
+            "query": "tag:#report OR tag:#apt_briefing  ",
+            "color": {
+              "a": 1,
+              "rgb": 1155560
             }
           }
         ],
-        "collapse-display": false,
+        "collapse-display": true,
         "showArrow": true,
         "textFadeMultiplier": -2.5,
         "nodeSizeMultiplier": 2.97109375,
         "lineSizeMultiplier": 3.17526041666667,
-        "collapse-forces": true,
-        "centerStrength": 0.518713248970312,
-        "repelStrength": 10,
-        "linkStrength": 1,
-        "linkDistance": 250,
-        "scale": 1.0000000000000058,
-        "close": true
+        "collapse-forces": false,
+        "centerStrength": 0.3125,
+        "repelStrength": 11.1458333333333,
+        "linkStrength": 0.729166666666667,
+        "linkDistance": 168,
+        "scale": 0.7132754626224461,
+        "close": false
       }
-    },
-    {
-      "type": "file",
-      "ctime": 1711755648825,
-      "path": "🏠 Dashboard.md"
     }
   ]
 }

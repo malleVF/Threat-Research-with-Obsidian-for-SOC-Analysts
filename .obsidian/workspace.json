@@ -4,19 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "6f4e886cfbd7c495",
+        "id": "be3067cdbd3fe51e",
         "type": "tabs",
         "children": [
           {
-            "id": "cc4494f574b80ab8",
+            "id": "03f34113baee437a",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "🏠 Dashboard.md",
-                "mode": "preview",
-                "source": true
-              }
+              "type": "graph",
+              "state": {}
             }
           }
         ]
@@ -73,12 +69,11 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 348.5
+    "width": 233.5
   },
   "right": {
     "id": "3c7c14a7c841a9c8",
@@ -94,7 +89,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "🏠 Dashboard.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +105,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "🏠 Dashboard.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,9 +126,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "🏠 Dashboard.md"
-              }
+              "state": {}
             }
           },
           {
@@ -151,7 +142,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 407.5
+    "width": 354.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -167,9 +159,11 @@
       "file-cleaner-redux:Clean files": false
     }
   },
-  "active": "cc4494f574b80ab8",
+  "active": "f40e813c93d3da4a",
   "lastOpenFiles": [
     "🏠 Dashboard.md",
+    "Cases/Case-0815/hash 450437d49a7e5530c6fb04df2e56c3ab1553ada3712fab02bd1eeb1f1adbc267.md",
+    "0 Templates/Attachments/Artifact_Creation.mp4",
     "Cases/Case-2025/ipv4 143.198.30.16.md",
     "Cases/Case-2025/Case-2025 Report.md",
     "0 Templates/Actions/Create New Case & Artifacts.md",
@@ -199,7 +193,6 @@
     "Cases/Case-1011/ipv4 143.198.30.16.md",
     "Cases/Case-1011/domain shop.amazon-aws.fr.md",
     "0 Templates/SOPs/ipv4.md",
-    "Cases/Case-1012/ipv4 143.198.30.16.md",
     "Attachments/CTI - Workflow.png",
     "Cases/Case-2025",
     "0 Templates/Scripts/deleteThis.js",
@@ -208,7 +201,6 @@
     "Cases/Case-2024",
     "Cases/Case-23",
     "Cases/Case-22",
-    "Untitled 5.js",
     "Excalidraw/Scripts/Downloaded/Split Ellipse.svg",
     "Attachments/CTI Research and Reporting.png",
     "Excalidraw/Scripts/Downloaded/Toggle Grid.svg",

@@ -134,38 +134,38 @@ var require_react_development = __commonJS({
           ReactSharedInternals.ReactDebugCurrentFrame = ReactDebugCurrentFrame;
           ReactSharedInternals.ReactCurrentActQueue = ReactCurrentActQueue;
         }
-        function warn(format2) {
+        function warn(format) {
           {
             {
               for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
                 args[_key - 1] = arguments[_key];
               }
-              printWarning("warn", format2, args);
+              printWarning("warn", format, args);
             }
           }
         }
-        function error(format2) {
+        function error(format) {
           {
             {
               for (var _len2 = arguments.length, args = new Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {
                 args[_key2 - 1] = arguments[_key2];
               }
-              printWarning("error", format2, args);
+              printWarning("error", format, args);
             }
           }
         }
-        function printWarning(level, format2, args) {
+        function printWarning(level, format, args) {
           {
             var ReactDebugCurrentFrame2 = ReactSharedInternals.ReactDebugCurrentFrame;
             var stack = ReactDebugCurrentFrame2.getStackAddendum();
             if (stack !== "") {
-              format2 += "%s";
+              format += "%s";
               args = args.concat([stack]);
             }
             var argsWithFormat = args.map(function(item) {
               return String(item);
             });
-            argsWithFormat.unshift("Warning: " + format2);
+            argsWithFormat.unshift("Warning: " + format);
             Function.prototype.apply.call(console[level], console, argsWithFormat);
           }
         }
@@ -3622,38 +3622,38 @@ var require_react_dom_development = __commonJS({
             suppressWarning = newSuppressWarning;
           }
         }
-        function warn(format2) {
+        function warn(format) {
           {
             if (!suppressWarning) {
               for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
                 args[_key - 1] = arguments[_key];
               }
-              printWarning("warn", format2, args);
+              printWarning("warn", format, args);
             }
           }
         }
-        function error(format2) {
+        function error(format) {
           {
             if (!suppressWarning) {
               for (var _len2 = arguments.length, args = new Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {
                 args[_key2 - 1] = arguments[_key2];
               }
-              printWarning("error", format2, args);
+              printWarning("error", format, args);
             }
           }
         }
-        function printWarning(level, format2, args) {
+        function printWarning(level, format, args) {
           {
             var ReactDebugCurrentFrame2 = ReactSharedInternals.ReactDebugCurrentFrame;
             var stack = ReactDebugCurrentFrame2.getStackAddendum();
             if (stack !== "") {
-              format2 += "%s";
+              format += "%s";
               args = args.concat([stack]);
             }
             var argsWithFormat = args.map(function(item) {
               return String(item);
             });
-            argsWithFormat.unshift("Warning: " + format2);
+            argsWithFormat.unshift("Warning: " + format);
             Function.prototype.apply.call(console[level], console, argsWithFormat);
           }
         }
@@ -28185,11 +28185,16 @@ function NoteListComponent(params) {
   };
   const selectedDayNotes = (0, import_react23.useMemo)(() => {
     const selectedDayIso = (0, import_dayjs.default)(selectedDay).format("YYYY-MM-DD");
-    let sortedList = selectedDayIso in plugin.OZCALENDARDAYS_STATE ? plugin.OZCALENDARDAYS_STATE[selectedDayIso] : [];
+    let sortedList = [];
+    if (selectedDayIso in plugin.OZCALENDARDAYS_STATE) {
+      sortedList = plugin.OZCALENDARDAYS_STATE[selectedDayIso].filter(
+        (ozItem) => ozItem.type === "note"
+      );
+    }
     sortedList = sortedList.sort((a, b) => {
       if (plugin.settings.sortingOption === "name-rev")
-        [a, b] = [b, a];
-      return extractFileName(a).localeCompare(extractFileName(b), "en", { numeric: true });
+        [a.displayName, b.displayName] = [b.displayName, a.displayName];
+      return a.displayName.localeCompare(b.displayName, "en", { numeric: true });
     });
     return sortedList;
   }, [selectedDay, forceValue]);
@@ -28229,18 +28234,18 @@ function NoteListComponent(params) {
       className: "oz-calendar-notelist-container " + (plugin.settings.fileNameOverflowBehaviour == "scroll" ? "oz-calendar-overflow-scroll" : "")
     },
     selectedDayNotes.length === 0 && /* @__PURE__ */ import_react23.default.createElement("div", { className: "oz-calendar-note-no-note" }, /* @__PURE__ */ import_react23.default.createElement(RiPhoneFindLine, { className: "oz-calendar-no-note-icon" }), "No note found"),
-    selectedDayNotes.map((notePath) => {
+    selectedDayNotes.map((ozNote) => {
       return /* @__PURE__ */ import_react23.default.createElement(
         "div",
         {
           className: "oz-calendar-note-line" + (plugin.settings.fileNameOverflowBehaviour == "hide" ? " oz-calendar-overflow-hide" : ""),
-          id: notePath,
-          key: notePath,
-          onClick: (e) => openFilePath(e, notePath),
-          onContextMenu: (e) => triggerFileContextMenu(e, notePath)
+          id: ozNote.path,
+          key: ozNote.path,
+          onClick: (e) => openFilePath(e, ozNote.path),
+          onContextMenu: (e) => triggerFileContextMenu(e, ozNote.path)
         },
         /* @__PURE__ */ import_react23.default.createElement(HiOutlineDocumentText, { className: "oz-calendar-note-line-icon" }),
-        /* @__PURE__ */ import_react23.default.createElement("span", null, extractFileName(notePath))
+        /* @__PURE__ */ import_react23.default.createElement("span", null, ozNote.displayName)
       );
     })
   ));
@@ -28748,7 +28753,7 @@ var round = Math.round;
 // node_modules/@popperjs/core/lib/utils/userAgent.js
 function getUAString() {
   var uaData = navigator.userAgentData;
-  if (uaData != null && uaData.brands) {
+  if (uaData != null && uaData.brands && Array.isArray(uaData.brands)) {
     return uaData.brands.map(function(item) {
       return item.brand + "/" + item.version;
     }).join(" ");
@@ -28992,15 +28997,7 @@ function effect2(_ref2) {
       return;
     }
   }
-  if (true) {
-    if (!isHTMLElement(arrowElement)) {
-      console.error(['Popper: "arrow" element must be an HTMLElement (not an SVGElement).', "To use an SVG arrow, wrap it in an HTMLElement that will be used as", "the arrow."].join(" "));
-    }
-  }
   if (!contains(state.elements.popper, arrowElement)) {
-    if (true) {
-      console.error(['Popper: "arrow" modifier\'s `element` must be a child of the popper', "element."].join(" "));
-    }
     return;
   }
   state.elements.arrow = arrowElement;
@@ -29027,9 +29024,8 @@ var unsetSides = {
   bottom: "auto",
   left: "auto"
 };
-function roundOffsetsByDPR(_ref) {
+function roundOffsetsByDPR(_ref, win) {
   var x = _ref.x, y = _ref.y;
-  var win = window;
   var dpr = win.devicePixelRatio || 1;
   return {
     x: round(x * dpr) / dpr || 0,
@@ -29091,7 +29087,7 @@ function mapToStyles(_ref2) {
   var _ref4 = roundOffsets === true ? roundOffsetsByDPR({
     x,
     y
-  }) : {
+  }, getWindow(popper2)) : {
     x,
     y
   };
@@ -29106,14 +29102,6 @@ function mapToStyles(_ref2) {
 function computeStyles(_ref5) {
   var state = _ref5.state, options = _ref5.options;
   var _options$gpuAccelerat = options.gpuAcceleration, gpuAcceleration = _options$gpuAccelerat === void 0 ? true : _options$gpuAccelerat, _options$adaptive = options.adaptive, adaptive = _options$adaptive === void 0 ? true : _options$adaptive, _options$roundOffsets = options.roundOffsets, roundOffsets = _options$roundOffsets === void 0 ? true : _options$roundOffsets;
-  if (true) {
-    var transitionProperty = getComputedStyle(state.elements.popper).transitionProperty || "";
-    if (adaptive && ["transform", "top", "right", "bottom", "left"].some(function(property) {
-      return transitionProperty.indexOf(property) >= 0;
-    })) {
-      console.warn(["Popper: Detected CSS transitions on at least one of the following", 'CSS properties: "transform", "top", "right", "bottom", "left".', "\n\n", 'Disable the "computeStyles" modifier\'s `adaptive` option to allow', "for smooth transitions, or remove these properties from the CSS", "transition declaration on the popper element if only transitioning", "opacity or background-color for example.", "\n\n", "We recommend using the popper element as a wrapper around an inner", "element that can have any CSS property transitioned for animations."].join(" "));
-    }
-  }
   var commonStyles = {
     placement: getBasePlacement(state.placement),
     variation: getVariation(state.placement),
@@ -29473,9 +29461,6 @@ function computeAutoPlacement(state, options) {
   });
   if (allowedPlacements.length === 0) {
     allowedPlacements = placements2;
-    if (true) {
-      console.error(["Popper: The `allowedAutoPlacements` option did not allow any", "placements. Ensure the `placement` option matches the variation", "of the allowed placements.", 'For example, "auto" cannot be used to allow "bottom-start".', 'Use "auto-start" instead.'].join(" "));
-    }
   }
   var overflows = allowedPlacements.reduce(function(acc, placement2) {
     acc[placement2] = detectOverflow(state, {
@@ -29920,92 +29905,6 @@ function debounce(fn2) {
   };
 }
 
-// node_modules/@popperjs/core/lib/utils/format.js
-function format(str) {
-  for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-    args[_key - 1] = arguments[_key];
-  }
-  return [].concat(args).reduce(function(p, c) {
-    return p.replace(/%s/, c);
-  }, str);
-}
-
-// node_modules/@popperjs/core/lib/utils/validateModifiers.js
-var INVALID_MODIFIER_ERROR = 'Popper: modifier "%s" provided an invalid %s property, expected %s but got %s';
-var MISSING_DEPENDENCY_ERROR = 'Popper: modifier "%s" requires "%s", but "%s" modifier is not available';
-var VALID_PROPERTIES = ["name", "enabled", "phase", "fn", "effect", "requires", "options"];
-function validateModifiers(modifiers) {
-  modifiers.forEach(function(modifier) {
-    [].concat(Object.keys(modifier), VALID_PROPERTIES).filter(function(value, index, self2) {
-      return self2.indexOf(value) === index;
-    }).forEach(function(key) {
-      switch (key) {
-        case "name":
-          if (typeof modifier.name !== "string") {
-            console.error(format(INVALID_MODIFIER_ERROR, String(modifier.name), '"name"', '"string"', '"' + String(modifier.name) + '"'));
-          }
-          break;
-        case "enabled":
-          if (typeof modifier.enabled !== "boolean") {
-            console.error(format(INVALID_MODIFIER_ERROR, modifier.name, '"enabled"', '"boolean"', '"' + String(modifier.enabled) + '"'));
-          }
-          break;
-        case "phase":
-          if (modifierPhases.indexOf(modifier.phase) < 0) {
-            console.error(format(INVALID_MODIFIER_ERROR, modifier.name, '"phase"', "either " + modifierPhases.join(", "), '"' + String(modifier.phase) + '"'));
-          }
-          break;
-        case "fn":
-          if (typeof modifier.fn !== "function") {
-            console.error(format(INVALID_MODIFIER_ERROR, modifier.name, '"fn"', '"function"', '"' + String(modifier.fn) + '"'));
-          }
-          break;
-        case "effect":
-          if (modifier.effect != null && typeof modifier.effect !== "function") {
-            console.error(format(INVALID_MODIFIER_ERROR, modifier.name, '"effect"', '"function"', '"' + String(modifier.fn) + '"'));
-          }
-          break;
-        case "requires":
-          if (modifier.requires != null && !Array.isArray(modifier.requires)) {
-            console.error(format(INVALID_MODIFIER_ERROR, modifier.name, '"requires"', '"array"', '"' + String(modifier.requires) + '"'));
-          }
-          break;
-        case "requiresIfExists":
-          if (!Array.isArray(modifier.requiresIfExists)) {
-            console.error(format(INVALID_MODIFIER_ERROR, modifier.name, '"requiresIfExists"', '"array"', '"' + String(modifier.requiresIfExists) + '"'));
-          }
-          break;
-        case "options":
-        case "data":
-          break;
-        default:
-          console.error('PopperJS: an invalid property has been provided to the "' + modifier.name + '" modifier, valid properties are ' + VALID_PROPERTIES.map(function(s) {
-            return '"' + s + '"';
-          }).join(", ") + '; but "' + key + '" was provided.');
-      }
-      modifier.requires && modifier.requires.forEach(function(requirement) {
-        if (modifiers.find(function(mod) {
-          return mod.name === requirement;
-        }) == null) {
-          console.error(format(MISSING_DEPENDENCY_ERROR, String(modifier.name), requirement, requirement));
-        }
-      });
-    });
-  });
-}
-
-// node_modules/@popperjs/core/lib/utils/uniqueBy.js
-function uniqueBy(arr, fn2) {
-  var identifiers = /* @__PURE__ */ new Set();
-  return arr.filter(function(item) {
-    var identifier = fn2(item);
-    if (!identifiers.has(identifier)) {
-      identifiers.add(identifier);
-      return true;
-    }
-  });
-}
-
 // node_modules/@popperjs/core/lib/utils/mergeByName.js
 function mergeByName(modifiers) {
   var merged = modifiers.reduce(function(merged2, current) {
@@ -30022,8 +29921,6 @@ function mergeByName(modifiers) {
 }
 
 // node_modules/@popperjs/core/lib/createPopper.js
-var INVALID_ELEMENT_ERROR = "Popper: Invalid reference or popper argument provided. They must be either a DOM element or virtual element.";
-var INFINITE_LOOP_ERROR = "Popper: An infinite loop in the modifiers cycle has been detected! The cycle has been interrupted to prevent a browser crash.";
 var DEFAULT_OPTIONS = {
   placement: "bottom",
   modifiers: [],
@@ -30074,28 +29971,6 @@ function popperGenerator(generatorOptions) {
         state.orderedModifiers = orderedModifiers.filter(function(m) {
           return m.enabled;
         });
-        if (true) {
-          var modifiers = uniqueBy([].concat(orderedModifiers, state.options.modifiers), function(_ref) {
-            var name = _ref.name;
-            return name;
-          });
-          validateModifiers(modifiers);
-          if (getBasePlacement(state.options.placement) === auto) {
-            var flipModifier = state.orderedModifiers.find(function(_ref2) {
-              var name = _ref2.name;
-              return name === "flip";
-            });
-            if (!flipModifier) {
-              console.error(['Popper: "auto" placements require the "flip" modifier be', "present and enabled to work."].join(" "));
-            }
-          }
-          var _getComputedStyle = getComputedStyle(popper2), marginTop = _getComputedStyle.marginTop, marginRight = _getComputedStyle.marginRight, marginBottom = _getComputedStyle.marginBottom, marginLeft = _getComputedStyle.marginLeft;
-          if ([marginTop, marginRight, marginBottom, marginLeft].some(function(margin) {
-            return parseFloat(margin);
-          })) {
-            console.warn(['Popper: CSS "margin" styles cannot be used to apply padding', "between the popper and its reference element or boundary.", "To replicate margin, use the `offset` modifier, as well as", "the `padding` option in the `preventOverflow` and `flip`", "modifiers."].join(" "));
-          }
-        }
         runModifierEffects();
         return instance.update();
       },
@@ -30110,9 +29985,6 @@ function popperGenerator(generatorOptions) {
         }
         var _state$elements = state.elements, reference3 = _state$elements.reference, popper3 = _state$elements.popper;
         if (!areValidElements(reference3, popper3)) {
-          if (true) {
-            console.error(INVALID_ELEMENT_ERROR);
-          }
           return;
         }
         state.rects = {
@@ -30124,15 +29996,7 @@ function popperGenerator(generatorOptions) {
         state.orderedModifiers.forEach(function(modifier) {
           return state.modifiersData[modifier.name] = Object.assign({}, modifier.data);
         });
-        var __debug_loops__ = 0;
         for (var index = 0; index < state.orderedModifiers.length; index++) {
-          if (true) {
-            __debug_loops__ += 1;
-            if (__debug_loops__ > 100) {
-              console.error(INFINITE_LOOP_ERROR);
-              break;
-            }
-          }
           if (state.reset === true) {
             state.reset = false;
             index = -1;
@@ -30163,9 +30027,6 @@ function popperGenerator(generatorOptions) {
       }
     };
     if (!areValidElements(reference2, popper2)) {
-      if (true) {
-        console.error(INVALID_ELEMENT_ERROR);
-      }
       return instance;
     }
     instance.setOptions(options).then(function(state2) {
@@ -30174,8 +30035,8 @@ function popperGenerator(generatorOptions) {
       }
     });
     function runModifierEffects() {
-      state.orderedModifiers.forEach(function(_ref3) {
-        var name = _ref3.name, _ref3$options = _ref3.options, options2 = _ref3$options === void 0 ? {} : _ref3$options, effect4 = _ref3.effect;
+      state.orderedModifiers.forEach(function(_ref) {
+        var name = _ref.name, _ref$options = _ref.options, options2 = _ref$options === void 0 ? {} : _ref$options, effect4 = _ref.effect;
         if (typeof effect4 === "function") {
           var cleanupFn = effect4({
             state,
@@ -30579,6 +30440,15 @@ var OZCalendarView = class extends import_obsidian5.ItemView {
 var import_dayjs4 = __toESM(require_dayjs_min());
 var import_customParseFormat = __toESM(require_customParseFormat());
 
+// src/types.ts
+var fileToOZItem = (params) => {
+  return {
+    type: "note",
+    displayName: params.note.basename,
+    path: params.note.path
+  };
+};
+
 // src/util/icons.ts
 var OZCAL_ICON = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M128 0c13.3 0 24 10.7 24 24V64H296V24c0-13.3 10.7-24 24-24s24 10.7 24 24V64h40c35.3 0 64 28.7 64 64v16 48V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V192 144 128C0 92.7 28.7 64 64 64h40V24c0-13.3 10.7-24 24-24zM400 192H48V448c0 8.8 7.2 16 16 16H384c8.8 0 16-7.2 16-16V192zM329 297L217 409c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47 95-95c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg>`;
 
@@ -30833,12 +30703,12 @@ var OZCalendarPlugin = class extends import_obsidian7.Plugin {
      * @param date
      * @param filePath
      */
-    this.addFilePathToState = (date, filePath) => {
+    this.addFilePathToState = (date, file) => {
       let newStateMap = this.OZCALENDARDAYS_STATE;
       if (date in newStateMap) {
-        newStateMap[date] = [...newStateMap[date], filePath];
+        newStateMap[date] = [...newStateMap[date], fileToOZItem({ note: file })];
       } else {
-        newStateMap[date] = [filePath];
+        newStateMap[date] = [fileToOZItem({ note: file })];
       }
       this.OZCALENDARDAYS_STATE = newStateMap;
     };
@@ -30851,8 +30721,10 @@ var OZCalendarPlugin = class extends import_obsidian7.Plugin {
       let changeFlag = false;
       let newStateMap = this.OZCALENDARDAYS_STATE;
       for (let k of Object.keys(newStateMap)) {
-        if (newStateMap[k].contains(filePath)) {
-          newStateMap[k] = newStateMap[k].filter((p) => p !== filePath);
+        if (newStateMap[k].some((ozItem) => ozItem.type === "note" && ozItem.path === filePath)) {
+          newStateMap[k] = newStateMap[k].filter((ozItem) => {
+            return !(ozItem.type === "note" && ozItem.path === filePath);
+          });
           changeFlag = true;
         }
       }
@@ -30873,7 +30745,7 @@ var OZCalendarPlugin = class extends import_obsidian7.Plugin {
           if (k === this.settings.yamlKey) {
             let fmValue = String(fm[k]);
             let parsedDayISOString = (0, import_dayjs4.default)(fmValue, this.settings.dateFormat).format("YYYY-MM-DD");
-            this.addFilePathToState(parsedDayISOString, file.path);
+            this.addFilePathToState(parsedDayISOString, file);
             changeFlag = true;
           }
         }
@@ -30901,10 +30773,10 @@ var OZCalendarPlugin = class extends import_obsidian7.Plugin {
               let fmValue = String(fm[k]);
               let parsedDayISOString = (0, import_dayjs4.default)(fmValue, this.settings.dateFormat).format("YYYY-MM-DD");
               if (!(parsedDayISOString in this.OZCALENDARDAYS_STATE)) {
-                this.addFilePathToState(parsedDayISOString, file.path);
+                this.addFilePathToState(parsedDayISOString, file);
               } else {
                 if (!(file.path in this.OZCALENDARDAYS_STATE[parsedDayISOString])) {
-                  this.addFilePathToState(parsedDayISOString, file.path);
+                  this.addFilePathToState(parsedDayISOString, file);
                 }
               }
             }
@@ -30918,14 +30790,16 @@ var OZCalendarPlugin = class extends import_obsidian7.Plugin {
       let changeFlag = false;
       if (file instanceof import_obsidian7.TFile && file.extension === "md") {
         for (let k of Object.keys(this.OZCALENDARDAYS_STATE)) {
-          for (let filePath of this.OZCALENDARDAYS_STATE[k]) {
-            if (filePath === oldPath) {
-              let oldIndex = this.OZCALENDARDAYS_STATE[k].indexOf(filePath);
+          for (let ozItem of this.OZCALENDARDAYS_STATE[k]) {
+            if (ozItem.type === "note" && ozItem.path === oldPath) {
               if (this.settings.dateSource === "yaml") {
-                this.OZCALENDARDAYS_STATE[k][oldIndex] = file.path;
+                ozItem.path = file.path;
+                ozItem.displayName = file.basename;
                 changeFlag = true;
               } else if (this.settings.dateSource === "filename") {
-                this.OZCALENDARDAYS_STATE[k].splice(oldIndex, 1);
+                this.OZCALENDARDAYS_STATE[k] = this.OZCALENDARDAYS_STATE[k].filter((ozItem2) => {
+                  return !(ozItem2.type === "note" && ozItem2.path === oldPath);
+                });
                 changeFlag = true;
               }
             }
@@ -30937,10 +30811,10 @@ var OZCalendarPlugin = class extends import_obsidian7.Plugin {
         if (parsedDayISOString in this.OZCALENDARDAYS_STATE) {
           this.OZCALENDARDAYS_STATE[parsedDayISOString] = [
             ...this.OZCALENDARDAYS_STATE[parsedDayISOString],
-            file.path
+            fileToOZItem({ note: file })
           ];
         } else {
-          this.OZCALENDARDAYS_STATE[parsedDayISOString] = [file.path];
+          this.OZCALENDARDAYS_STATE[parsedDayISOString] = [fileToOZItem({ note: file })];
         }
         changeFlag = true;
       }
@@ -30959,10 +30833,10 @@ var OZCalendarPlugin = class extends import_obsidian7.Plugin {
           if (parsedDayISOString in this.OZCALENDARDAYS_STATE) {
             this.OZCALENDARDAYS_STATE[parsedDayISOString] = [
               ...this.OZCALENDARDAYS_STATE[parsedDayISOString],
-              file.path
+              fileToOZItem({ note: file })
             ];
           } else {
-            this.OZCALENDARDAYS_STATE[parsedDayISOString] = [file.path];
+            this.OZCALENDARDAYS_STATE[parsedDayISOString] = [fileToOZItem({ note: file })];
           }
         }
         this.calendarForceUpdate();
@@ -31003,10 +30877,10 @@ var OZCalendarPlugin = class extends import_obsidian7.Plugin {
                 if (parsedDayISOString in OZCalendarDays) {
                   OZCalendarDays[parsedDayISOString] = [
                     ...OZCalendarDays[parsedDayISOString],
-                    mdFile.path
+                    fileToOZItem({ note: mdFile })
                   ];
                 } else {
-                  OZCalendarDays[parsedDayISOString] = [mdFile.path];
+                  OZCalendarDays[parsedDayISOString] = [fileToOZItem({ note: mdFile })];
                 }
               }
             }
@@ -31019,10 +30893,10 @@ var OZCalendarPlugin = class extends import_obsidian7.Plugin {
               if (parsedDayISOString in OZCalendarDays) {
                 OZCalendarDays[parsedDayISOString] = [
                   ...OZCalendarDays[parsedDayISOString],
-                  mdFile.path
+                  fileToOZItem({ note: mdFile })
                 ];
               } else {
-                OZCalendarDays[parsedDayISOString] = [mdFile.path];
+                OZCalendarDays[parsedDayISOString] = [fileToOZItem({ note: mdFile })];
               }
             }
           }

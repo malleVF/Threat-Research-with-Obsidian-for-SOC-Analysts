@@ -1,7 +1,8 @@
 ---
 file_created: 2024-03-23 @ 00:34 (UTC +01:00)
 case_id: README
-cssclasses: []
+cssclasses: 
+type: moc
 ---
 
 ## Table of Content
@@ -20,9 +21,7 @@ cssclasses: []
 - [[#Community Plugins]]
 
 ---
-# Threat Research with Obsidian for SOC Analysts
- 
- Enrich your investigations on IPs, Domains etc. with OSINT
+# Readme
 
 ## How to Start
 
@@ -36,6 +35,9 @@ cssclasses: []
 >>> path: Actions
 >>>```
 >>
+>>>[! info]- Attachments
+>>> - The space for images and PDF files
+>> 
 >>> [! Example]- Helper
 >>> - File with configuration for the Button displayed in the Dashboard and Case Reports
 >>> - Predefined Case Report and MOC (Map of Content) Templates 
@@ -49,9 +51,6 @@ cssclasses: []
 >>> path: SOPs
 >>>```
 >
->>[! info]- Attachments
->> - The space for images and PDF files
->
 >> [! Info]- Cases
 >> - Main folder for all the Cases created by the SOC Analyst
 >> - Every single Cases has his own subfolder with the Artifacts, Report and MOC. 
@@ -63,7 +62,7 @@ cssclasses: []
 
 ### Create Case & Add Artifacts
 
-[![[CTI - Workflow Execute Action Template.png|720]]](obsidian://open?vault=CTI%20Research&file=CTI%20-%20Workflow%20Execute%20Action%20Template.png)
+[![[CTI - Workflow Create Case & Artifact.png|720]]](obsidian://open?vault=CTI%20Research&file=Attachments%2FCTI%20-%20Workflow%20Create%20Case%20%26%20Artifact.png)
 ^workflow-create
 ### Enrich Artifacts with Context
 [![[CTI - Workflow Execute Action Template.png|720]]](obsidian://open?vault=CTI%20Research&file=CTI%20-%20Workflow%20Execute%20Action%20Template.png)
@@ -77,7 +76,6 @@ cssclasses: []
 ==help page for your Standard Operating Procedure==
 
 ### ❓CVE - SOP
-
 
 ==help page for your Standard Operating Procedure==
 
@@ -102,17 +100,94 @@ cssclasses: []
 
 |Classification Value|Description|
 |---|---|
-| **malicious** | The IoC is currently involved in malicious activities and is considered to be harmful. |
-| **suspicious** | The IoC has been involved in malicious activities in the past and there are chances it has not ceased. |
-| **neutral** |  There is no information related to the IoC that could determine if it is good or bad. |
-| **whitelist** |The IoC is considered to be safe and will remain as it is despite new malicious classification incoming. |
+| **#malicious** | The IoC is currently involved in malicious activities and is considered to be harmful. |
+| **#suspicious** | The IoC has been involved in malicious activities in the past and there are chances it has not ceased. |
+| **#neutral** |  There is no information related to the IoC that could determine if it is good or bad. |
+| **#whitelist** |The IoC is considered to be safe and will remain as it is despite new malicious classification incoming. |
 Source: [Maltiverse](https://maltiverse.com/start) 
+
+### ❓MITRE
+
+#### ❓MITRE CVSS
+
+|**CVSS Base Score**|**CVSS Severity Level**| tag |
+|---|---|---|
+| 0 | None | #whitelist |
+| 0.1 - 3.9 | Low| #neutral |
+| 4.0 - 6.9 | Medium| #suspicious |
+| 7.0 - 8.9 | High| #suspicious |
+| 9.0 - 10. | Critical| #malicious |
+[FIRST](https://www.first.org/cvss/v3.1/specification-document)
+
+#### ❓CVSS Metrics - Exploitability
+
+##### Attack Vector
+
+|Metric Value|Description|
+|---|---|
+|Network (N)|The vulnerable component is bound to the network stack and the set of possible attackers extends beyond the other options listed below, up to and including the entire Internet. Such a vulnerability is often termed “remotely exploitable” and can be thought of as an attack being exploitable _at the protocol level_ one or more network hops away (e.g., across one or more routers). An example of a network attack is an attacker causing a denial of service (DoS) by sending a specially crafted TCP packet across a wide area network (e.g., CVE‑2004‑0230).|
+|Adjacent (A)|The vulnerable component is bound to the network stack, but the attack is limited _at the protocol level_ to a logically adjacent topology. This can mean an attack must be launched from the same shared physical (e.g., Bluetooth or IEEE 802.11) or logical (e.g., local IP subnet) network, or from within a secure or otherwise limited administrative domain (e.g., MPLS, secure VPN to an administrative network zone). One example of an Adjacent attack would be an ARP (IPv4) or neighbor discovery (IPv6) flood leading to a denial of service on the local LAN segment (e.g., CVE‑2013‑6014).|
+|Local (L)|The vulnerable component is not bound to the network stack and the attacker’s path is via read/write/execute capabilities. Either:<br><br>- the attacker exploits the vulnerability by accessing the target system locally (e.g., keyboard, console), or remotely (e.g., SSH); _or_<br>- the attacker relies on User Interaction by another person to perform actions required to exploit the vulnerability (e.g., using social engineering techniques to trick a legitimate user into opening a malicious document).|
+|Physical (P)|The attack requires the attacker to physically touch or manipulate the vulnerable component. Physical interaction may be brief (e.g., evil maid attack[1](https://www.first.org/cvss/v3.1/specification-document#fn:1)) or persistent. An example of such an attack is a cold boot attack in which an attacker gains access to disk encryption keys after physically accessing the target system. Other examples include peripheral attacks via FireWire/USB Direct Memory Access (DMA).|
+[FIRST](https://www.first.org/cvss/v3.1/specification-document)
+
+##### Attack Complexity
+
+|Metric Value|Description|
+|---|---|
+|Low (L)|Specialized access conditions or extenuating circumstances do not exist. An attacker can expect repeatable success when attacking the vulnerable component.|
+|High (H)|A successful attack depends on conditions beyond the attacker's control. That is, a successful attack cannot be accomplished at will, but requires the attacker to invest in some measurable amount of effort in preparation or execution against the vulnerable component before a successful attack can be expected.[2](https://www.first.org/cvss/v3.1/specification-document#fn:2) For example, a successful attack may depend on an attacker overcoming any of the following conditions:<br><br>- The attacker must gather knowledge about the environment in which the vulnerable target/component exists. For example, a requirement to collect details on target configuration settings, sequence numbers, or shared secrets.<br>- The attacker must prepare the target environment to improve exploit reliability. For example, repeated exploitation to win a race condition, or overcoming advanced exploit mitigation techniques.<br>- The attacker must inject themselves into the logical network path between the target and the resource requested by the victim in order to read and/or modify network communications (e.g., a man in the middle attack).|
+[FIRST](https://www.first.org/cvss/v3.1/specification-document)
+
+##### Privileges Required
+
+|Metric Value|Description|
+|---|---|
+|None (N)|The attacker is unauthorized prior to attack, and therefore does not require any access to settings or files of the vulnerable system to carry out an attack.|
+|Low (L)|The attacker requires privileges that provide basic user capabilities that could normally affect only settings and files owned by a user. Alternatively, an attacker with Low privileges has the ability to access only non-sensitive resources.|
+|High (H)|The attacker requires privileges that provide significant (e.g., administrative) control over the vulnerable component allowing access to component-wide settings and files.|
+[FIRST](https://www.first.org/cvss/v3.1/specification-document)
+
+##### User Interaction
+
+|Metric Value|Description|
+|---|---|
+|None (N)|The vulnerable system can be exploited without interaction from any user.|
+|Required (R)|Successful exploitation of this vulnerability requires a user to take some action before the vulnerability can be exploited. For example, a successful exploit may only be possible during the installation of an application by a system administrator.|
+[FIRST](https://www.first.org/cvss/v3.1/specification-document)
+
+#### ❓CVSS Metrics - Impact
+
+##### Confidentiality
+
+|Metric Value|Description|
+|---|---|
+|High (H)|There is a total loss of confidentiality, resulting in all resources within the impacted component being divulged to the attacker. Alternatively, access to only some restricted information is obtained, but the disclosed information presents a direct, serious impact. For example, an attacker steals the administrator's password, or private encryption keys of a web server.|
+|Low (L)|There is some loss of confidentiality. Access to some restricted information is obtained, but the attacker does not have control over what information is obtained, or the amount or kind of loss is limited. The information disclosure does not cause a direct, serious loss to the impacted component.|
+|None (N)|There is no loss of confidentiality within the impacted component.|
+[FIRST](https://www.first.org/cvss/v3.1/specification-document)
+
+##### Integrity
+
+|Metric Value|Description|
+|---|---|
+|High (H)|There is a total loss of integrity, or a complete loss of protection. For example, the attacker is able to modify any/all files protected by the impacted component. Alternatively, only some files can be modified, but malicious modification would present a direct, serious consequence to the impacted component.|
+|Low (L)|Modification of data is possible, but the attacker does not have control over the consequence of a modification, or the amount of modification is limited. The data modification does not have a direct, serious impact on the impacted component.|
+|None (N)|There is no loss of integrity within the impacted component.|
+[FIRST](https://www.first.org/cvss/v3.1/specification-document)
+
+##### Availability
+
+|Metric Value|Description|
+|---|---|
+|High (H)|There is a total loss of availability, resulting in the attacker being able to fully deny access to resources in the impacted component; this loss is either sustained (while the attacker continues to deliver the attack) or persistent (the condition persists even after the attack has completed). Alternatively, the attacker has the ability to deny some availability, but the loss of availability presents a direct, serious consequence to the impacted component (e.g., the attacker cannot disrupt existing connections, but can prevent new connections; the attacker can repeatedly exploit a vulnerability that, in each instance of a successful attack, leaks a only small amount of memory, but after repeated exploitation causes a service to become completely unavailable).|
+|Low (L)|Performance is reduced or there are interruptions in resource availability. Even if repeated exploitation of the vulnerability is possible, the attacker does not have the ability to completely deny service to legitimate users. The resources in the impacted component are either partially available all of the time, or fully available only some of the time, but overall there is no direct, serious consequence to the impacted component.|
+|None (N)|There is no impact to availability within the impacted component.|
+[FIRST](https://www.first.org/cvss/v3.1/specification-document)
 
 ## Templates
 
 ### Action Templates 
-
-- [ ] Create SOPs for Actions
 
 Actions are templates to enrich your artifacts.
 - Folder: 0 Templates / Actions
@@ -132,9 +207,6 @@ Actions are templates to enrich your artifacts.
 - API: https://api.maltiverse.com/ip/'+input)
 
 ### SOP Templates
-
-- [ ] Write SOPs for all Artifact-Types
-	- [ ] hash template has no content, header information can be used for new SOPs
 
 >[!info] Following Templates are available:
 >```query
@@ -219,9 +291,15 @@ Domains:
 IP Addresses:
 - 143.198.30.16
 - 202.182.107.193
+- 45.146.120.62
 
 Vulnerabilities:
 - CVE-2024-30201
+
+sha265:
+- 450437d49a7e5530c6fb04df2e56c3ab1553ada3712fab02bd1eeb1f1adbc267
+- e4a877ba15d80c1fb13c22ac4c90c7211452082f8d65f4393646e480cedffb3b
+
 
 
 ## Credits goes to
