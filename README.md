@@ -33,6 +33,11 @@ I was inspired by the work of Gert-Jan Bruggink, Micah Hoffman and Enock Nichola
 
 ---
 
+![](https://github.com/malleVF/Threat-Research-with-Obsidian-for-SOC-Analysts/blob/main/0%20Templates/Attachments/Case_Graph.png)
+(Image: Case Graph)
+
+---
+
 ## Workflow: Creating a case and adding artifacts (IP address, domain etc)
 
 ![](https://github.com/malleVF/Threat-Research-with-Obsidian-for-SOC-Analysts/blob/main/0%20Templates/Attachments/CTI%20-%20Workflow%20Create%20Case%20%26%20Artifact.png)
