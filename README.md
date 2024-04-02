@@ -21,7 +21,7 @@ I also want to do research outside of my regular job, where the (expensive) tech
 
 I used to have to save my notes in Notepad++, then later with Redmine and Confluence. However, this also increased the technical effort. With Obsidian, I have found a lean solution that allows me to manage my data locally. Workflows can be automated using plugins and JavaScript. In addition, linking the notes within an Obsidian Vault is incredibly easy.
 
-![](https://github.com/malleVF/Threat-Research-with-Obsidian-for-SOC-Analysts/blob/main/Attachments/CTI%20Research%20and%20Reporting.png)
+![](https://github.com/malleVF/Threat-Research-with-Obsidian-for-SOC-Analysts/blob/main/0%20Templates/Attachments/CTI%20Research%20and%20Reporting.png)
 
 The idea behind my new project is quite simple:
 SOPs and playbooks are used to describe work instructions and create task lists, which in principle access the external services via an API call. The output should be in JSON if possible, so that I can transform only the necessary information into a Markdown note and then summarize it later in a report.
@@ -31,13 +31,11 @@ In the picture I have described the process. My first tests with JavaScript are 
 
 I was inspired by the work of Gert-Jan Bruggink, Micah Hoffman and Enock Nicholaus Michael.
 
-![](https://github.com/malleVF/Threat-Research-with-Obsidian-for-SOC-Analysts/blob/main/0%20Templates/Attachments/Artifact_Creation.mp4)
-
 ---
 
 ## Workflow: Creating a case and adding artifacts (IP address, domain etc)
 
-![](https://github.com/malleVF/Threat-Research-with-Obsidian-for-SOC-Analysts/blob/main/Attachments/CTI%20-%20Workflow%20Create%20Case%20%26%20Artifact.png)
+![](https://github.com/malleVF/Threat-Research-with-Obsidian-for-SOC-Analysts/blob/main/0%20Templates/Attachments/CTI%20-%20Workflow%20Create%20Case%20%26%20Artifact.png)
 (Image:workflow)
 
 ![](https://github.com/malleVF/Threat-Research-with-Obsidian-for-SOC-Analysts/blob/main/Attachments/Dashboard.png)
@@ -45,7 +43,7 @@ I was inspired by the work of Gert-Jan Bruggink, Micah Hoffman and Enock Nichola
 
 ## Workflow: Enrich Artifacts withContext
 
-![](https://github.com/malleVF/Threat-Research-with-Obsidian-for-SOC-Analysts/blob/main/Attachments/CTI%20-%20Workflow%20Execute%20Action%20Template.png)
+![](https://github.com/malleVF/Threat-Research-with-Obsidian-for-SOC-Analysts/blob/main/0%20Templates/Attachments/CTI%20-%20Workflow%20Execute%20Action%20Template.png)
 (Image:workflow)
 
 ![](https://github.com/malleVF/Threat-Research-with-Obsidian-for-SOC-Analysts/blob/main/Attachments/Case%20Report.png)
