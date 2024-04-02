@@ -21,7 +21,6 @@ I also want to do research outside of my regular job, where the (expensive) tech
 
 I used to have to save my notes in Notepad++, then later with Redmine and Confluence. However, this also increased the technical effort. With Obsidian, I have found a lean solution that allows me to manage my data locally. Workflows can be automated using plugins and JavaScript. In addition, linking the notes within an Obsidian Vault is incredibly easy.
 
-
 ![](https://github.com/malleVF/Threat-Research-with-Obsidian-for-SOC-Analysts/blob/main/Attachments/CTI%20Research%20and%20Reporting.png)
 
 The idea behind my new project is quite simple:
@@ -32,6 +31,7 @@ In the picture I have described the process. My first tests with JavaScript are 
 
 I was inspired by the work of Gert-Jan Bruggink, Micah Hoffman and Enock Nicholaus Michael.
 
+![](https://github.com/malleVF/Threat-Research-with-Obsidian-for-SOC-Analysts/blob/main/0%20Templates/Attachments/Artifact_Creation.mp4)
 
 ---
 
