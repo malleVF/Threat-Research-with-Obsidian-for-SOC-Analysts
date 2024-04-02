@@ -43,7 +43,7 @@ I was inspired by the work of Gert-Jan Bruggink, Micah Hoffman and Enock Nichola
 ![](https://github.com/malleVF/Threat-Research-with-Obsidian-for-SOC-Analysts/blob/main/0%20Templates/Attachments/CTI%20-%20Workflow%20Create%20Case%20%26%20Artifact.png)
 (Image:workflow)
 
-![](https://github.com/malleVF/Threat-Research-with-Obsidian-for-SOC-Analysts/blob/main/Attachments/Dashboard.png)
+![](https://github.com/malleVF/Threat-Research-with-Obsidian-for-SOC-Analysts/blob/main/0%20Templates/Attachments/Dashboard.png)
 (Image: Dashboard)
 
 ## Workflow: Enrich Artifacts withContext
@@ -51,5 +51,6 @@ I was inspired by the work of Gert-Jan Bruggink, Micah Hoffman and Enock Nichola
 ![](https://github.com/malleVF/Threat-Research-with-Obsidian-for-SOC-Analysts/blob/main/0%20Templates/Attachments/CTI%20-%20Workflow%20Execute%20Action%20Template.png)
 (Image:workflow)
 
-![](https://github.com/malleVF/Threat-Research-with-Obsidian-for-SOC-Analysts/blob/main/Attachments/Case%20Report.png)
-(Image: Case Report)
+
+![](https://github.com/malleVF/Threat-Research-with-Obsidian-for-SOC-Analysts/blob/main/0%20Templates/Attachments/Action_Result.png)
+(Image: Action Result)
