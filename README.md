@@ -54,11 +54,8 @@ Another nice feature is the community plugin "Surfing". This allows you to surf 
 
 ---
 
-![](https://vimeo.com/930608773)
+[![Video: Create and enrich IP address](https://github.com/malleVF/Threat-Research-with-Obsidian-for-SOC-Analysts/blob/main/0%20Templates/Attachments/Action_Result.png)](https://github.com/malleVF/Threat-Research-with-Obsidian-for-SOC-Analysts/assets/40318953/0f47b984-754d-4117-b171-cc88d3904955)
 (Video: Create and enrich IP address)
-
-
-
 
 ![](https://github.com/malleVF/Threat-Research-with-Obsidian-for-SOC-Analysts/blob/main/0%20Templates/Attachments/Case_Graph.png)
 (Image: Case Graph)
