@@ -31,7 +31,34 @@ In the picture I have described the process. My first tests with JavaScript are 
 
 I was inspired by the work of Gert-Jan Bruggink, Micah Hoffman and Enock Nicholaus Michael.
 
+
+## Threat Research for SOC Analysts - The Vault
+
+The vault allows a SOC analyst to easily check their domains (hostnames), file hashes, vulnerabilities (CVEs) and IP addresses (= artifacts) with https://maltiverse.com and https://cve.mitre.org and save them as a note in Obsidian. It's not perfect, but it has a few features that are very useful.
+
+The whole thing is case-related, i.e. an incident is created (as a directory) and the artifacts are saved as a note in the respective directory, together with the case report.
+
+In the second step, the analyst has the option of enriching the artifacts with information if necessary and if the artifacts have not already been processed in another case.
+
+Both the individual artifacts and the case report can be beautifully formatted and exported as a PDF.
+
+There is also a dashboard in which all cases and open tasks are displayed.
+
+What could be improved: The API response is not validated in the script. If it fails, there are simply no results.
+
+Another nice feature is the community plugin "Surfing". This allows you to surf the internet without an external browser. It can also be used to save websites as Markdown. Very helpful and works wonderfully with the APT mission briefings from https://threatresearch.arcsight.com
+
+#obsidian #cybersecurity #automation #playbook #investigation #osint #soc
+
+## Videos & Screenshots
+
 ---
+
+<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/930608773?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Threat Research for SOC Analysts - The Vault Part1"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+(Video: Create and enrich IP address)
+
+
+
 
 ![](https://github.com/malleVF/Threat-Research-with-Obsidian-for-SOC-Analysts/blob/main/0%20Templates/Attachments/Case_Graph.png)
 (Image: Case Graph)
